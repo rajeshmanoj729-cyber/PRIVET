@@ -1,0 +1,13 @@
+# Windows / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+
+# Local temporary files
+*.tmp
+*.log
+
+# Keep the public APK in Git for Netlify direct downloads.
+!downloads/
+!downloads/gaashaan-latest.apk

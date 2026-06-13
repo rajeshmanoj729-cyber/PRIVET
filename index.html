@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="so">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GAASHAAN waa app loogu talagalay ganacsatada sarifka ee u baahan xawaare, xisaab sax ah, iyo kalsooni."
+    />
+    <title>GAASHAAN | Sarif Degdeg ah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell" id="top">
+      <header class="glass-nav">
+        <a class="brand" href="#top" aria-label="GAASHAAN">
+          <img class="brand-logo" src="assets/gaashaan-logo.jpg" alt="GAASHAAN">
+          <span class="brand-text">
+            <strong>GAASHAAN</strong>
+            <small>Sarif Degdeg ah</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <button class="nav-link magnetic" type="button" data-subscription-open>
+            Fiiri Qiimaha$
+          </button>
+          <a class="nav-cta magnetic" href="downloads/gaashaan-latest.apk" download>
+            <i data-lucide="download"></i>
+            Soo Degso App
+          </a>
+        </div>
+      </header>
+
+      <main class="hero" aria-label="GAASHAAN home page">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="motion-sheet sheet-one"></span>
+          <span class="motion-sheet sheet-two"></span>
+          <span class="motion-sheet sheet-three"></span>
+        </div>
+
+        <section class="hero-copy">
+          <p class="eyebrow reveal">GAASHAAN APP</p>
+          <h1 class="hero-title reveal">
+            GAASHAAN
+          </h1>
+          <p class="hero-lede reveal">
+            <strong>Waa app automatic ah kaa cawinaya wareejinta lacagta sarifka si amaan ah xawaare sarre 2.5 second gudohood</strong><br>
+            
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary magnetic" href="downloads/gaashaan-latest.apk" download>
+              <i data-lucide="download-cloud"></i>
+              Download GAASHAAN APK
+            </a>
+            <button class="btn btn-ghost magnetic" type="button" data-subscription-open>
+              <i data-lucide="badge-dollar-sign"></i>
+              Fiiri Qiimaha$
+            </button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="subscription-modal" aria-hidden="true" data-subscription-modal>
+      <div class="subscription-backdrop" data-subscription-close></div>
+      <section class="subscription-card" role="dialog" aria-modal="true" aria-labelledby="subscription-title">
+        <button class="modal-close magnetic" type="button" aria-label="Xir subscription-ka" data-subscription-close>
+          <i data-lucide="x"></i>
+        </button>
+
+        <p class="eyebrow">GAASHAAN Qiimaha$</p>
+        <h2 id="subscription-title">30$ ku hel shaqo soconaysa bisha oodhan.</h2>
+        <div class="price-value">
+          <span>$</span>30
+          <small>/ Month</small>
+        </div>
+        <p class="subscription-copy">
+          Ku hel xawaare, xisaab sax ah, iyo muuqaal kuu caddeeya wixii maalinta
+          laga sariftay.
+        </p>
+        <ul class="subscription-list">
+          <li><i data-lucide="check"></i> dirid degdeg ah 2.5s</li>
+          <li><i data-lucide="check"></i> 24 saac diyaar ah</li>
+          <li><i data-lucide="check"></i> jaantus xisabeed lacagta la wareejiyay malintii bishii</li>
+        </ul>
+        <a class="btn btn-primary magnetic" href="downloads/gaashaan-latest.apk" download>
+          <i data-lucide="download"></i>
+          Soo Degso App-ka
+        </a>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
