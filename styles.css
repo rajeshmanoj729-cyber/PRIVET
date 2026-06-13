@@ -356,6 +356,102 @@ svg {
   background: var(--blue);
 }
 
+.trial-panel {
+  width: min(620px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin: 30px auto 0;
+  padding: 22px;
+  border: 1px solid rgba(9, 105, 255, 0.18);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(237, 246, 255, 0.82)),
+    #ffffff;
+  box-shadow: 0 22px 56px rgba(9, 105, 255, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.trial-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 8%, rgba(9, 105, 255, 0.22), transparent 72%);
+  opacity: 0.68;
+  transform: translateX(-72%);
+  animation: trialGlow 5.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.trial-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.trial-badge {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 1px solid rgba(9, 105, 255, 0.18);
+  border-radius: 999px;
+  color: var(--blue);
+  background: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.trial-panel h2 {
+  max-width: 520px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.trial-panel p {
+  max-width: 540px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.whatsapp-link {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 0 18px;
+  border: 1px solid #1fb45b;
+  border-radius: var(--radius);
+  color: #ffffff;
+  background: #1fb45b;
+  box-shadow: 0 18px 36px rgba(31, 180, 91, 0.22);
+  font-weight: 900;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.whatsapp-link:hover {
+  color: #1fb45b;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(31, 180, 91, 0.14);
+}
+
+.whatsapp-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  stroke: none;
+}
+
 .metric-row {
   width: min(650px, 100%);
   display: grid;
@@ -998,6 +1094,18 @@ svg {
   50% {
     transform: scaleX(1);
     opacity: 1;
+  }
+}
+
+@keyframes trialGlow {
+  0%,
+  100% {
+    transform: translateX(-72%);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translateX(72%);
+    opacity: 0.82;
   }
 }
 
