@@ -15,24 +15,19 @@ if (-not (Test-Path -LiteralPath $SourceRoot)) {
 
 New-Item -ItemType Directory -Force -Path $destinationParent | Out-Null
 
-$apkCandidates = @(
-  Join-Path $SourceRoot "app\build\outputs\apk\debug\app-debug.apk"
-  Join-Path $SourceRoot "android\app\build\outputs\apk\release\app-release.apk"
-  Join-Path $SourceRoot "saradmin\build\outputs\apk\debug\saradmin-debug.apk"
-) | Where-Object { Test-Path -LiteralPath $_ } | ForEach-Object { Get-Item -LiteralPath $_ }
-
-if (-not $apkCandidates) {
-  throw "No APK files found in known Dhakhsade build output folders."
+$releaseApk = Join-Path $SourceRoot "app\build\outputs\apk\release\app-release.apk"
+if (-not (Test-Path -LiteralPath $releaseApk)) {
+  throw "Production customer APK not found: $releaseApk"
 }
 
-$latestApk = $apkCandidates | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-Copy-Item -LiteralPath $latestApk.FullName -Destination $destinationPath -Force
+$sourceApk = Get-Item -LiteralPath $releaseApk
+Copy-Item -LiteralPath $sourceApk.FullName -Destination $destinationPath -Force
 
 $copied = Get-Item -LiteralPath $destinationPath
 $hash = (Get-FileHash -LiteralPath $destinationPath -Algorithm SHA256).Hash
 
 [pscustomobject]@{
-  Source = $latestApk.FullName
+  Source = $sourceApk.FullName
   Destination = $copied.FullName
   SizeBytes = $copied.Length
   LastWriteTime = $copied.LastWriteTime
